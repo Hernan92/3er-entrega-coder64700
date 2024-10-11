@@ -1,0 +1,66 @@
+@use "variables";
+@use "mixins";
+
+/* =========== - Navbar - ========== */
+
+.navbar{
+    @include mixins.grid-mixin(grid, repeat(1, 1fr), center, center, 10px);
+    border-bottom: 1px solid #2422263d;
+    background-color: variables.$color-1;
+
+    .logo{
+        width: 130px;
+    }
+
+    .btn-cart{
+        @include mixins.button-mixin(unset, none, 1.4rem, #242226, 0px); 
+
+        .link-cart{
+            text-decoration: none;
+            color: variables.$color-2;
+        }
+
+        .counter{
+            font-size: 15px;
+            font-weight: bold;
+            color: #f62f2f;            
+        }
+    }
+
+    .nav-item{
+        border-bottom: 1px solid #2422263d;
+        padding: 5px 0px;
+
+        .nav-link{
+            color: variables.$color-2;
+        }
+
+        .nav-link:hover{
+            color: variables.$color-3;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .navbar{
+        grid-template-columns: repeat(2, 30% 70%);   
+        
+        .container-fluid{
+            @include mixins.flex-mixin(flex, row-reverse, center, center, 30px);
+
+            .btn-cart{
+                border-left: 1px solid #24222678;
+                padding-left: 10px;
+            }
+        }
+
+        .offcanvas-start{
+            margin-left: auto;
+            padding-right: 40px;
+        }
+
+        .nav-item{
+            border-bottom: none;
+        }
+    }
+}

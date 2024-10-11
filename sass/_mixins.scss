@@ -1,0 +1,40 @@
+@use "variables";
+
+@mixin flex-mixin($display, $direction, $align, $justify, $gap){
+    display: $display;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin grid-mixin($display, $column, $align, $justify, $gap){
+    display: $display;
+    grid-template-columns: $column;
+    align-items: $align;
+    justify-items: $justify;
+    gap: $gap;
+}
+
+@mixin grid-auto{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+@mixin button-mixin($background, $border, $font, $color, $padding){
+    background-color: $background;
+    border: $border;
+    font-size: $font;
+    color: $color;
+    padding: $padding;
+}
+
+@mixin estilos-blur{
+    border-radius: 15px;
+    background: linear-gradient(145deg, #c1c1c1, #e5e5e5);
+    box-shadow:  9px 9px 15px #c5c5c5,
+    -9px -9px 15px #e7e7e7;
+}

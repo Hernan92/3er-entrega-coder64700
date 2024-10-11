@@ -1,0 +1,22 @@
+@use "variables";
+
+/* =========== - Header - ========== */
+
+.header{
+    .header__content{
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 5px;
+        background-color: variables.$color-2;
+        color: variables.$color-1;
+        padding: 5px;
+    }
+}
+
+@media(min-width: 768px){
+    .header{
+        .header__content{
+            font-size: 14px;
+        }
+    }
+}
